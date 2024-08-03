@@ -27,6 +27,7 @@ class SimilarityStoreApp():
         
         rows = rows.astype(np.int32)
         self.random_proj[rows, cols] = 1
+        print('[+] Finished loading model')
 
     def _embed(self, text):
         # Use MiniLM for embedding
@@ -40,7 +41,6 @@ class SimilarityStoreApp():
         # calculate novelty
         novelty = 0.0
         novelty = np.sum(self.stored_embeds[idxs]) / self.top_k
-        print(f'novelty: {novelty}')
 
         # set to 0.0
         self.stored_embeds[idxs] = 0.0
@@ -72,5 +72,6 @@ def search():
     return jsonify(error=error, result=result)
 
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
