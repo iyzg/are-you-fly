@@ -59,7 +59,7 @@ fly_app = SimilarityStoreApp()
 CORS(app, supports_credentials=True)
 
 
-@app.route("/api/novelty", methods=["POST"])
+@app.route("/novelty", methods=["POST"])
 def search():
     error = None
     result = []
