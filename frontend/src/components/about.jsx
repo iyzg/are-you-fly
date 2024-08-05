@@ -5,10 +5,11 @@ const About = (props) => {
                 Scoring creativity from a fly
             </h2>
             <p>
-                How Fly Are You? uses an embedding model and fly-inspired bloom filter
+                How Fly Are You? uses an embedding model and   
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6304992/">fly-inspired bloom filter</a> 
                 to score the creativity of your text. Over time, things that were once
-                "boring" become novel again to our digital fly. Just how creative can
-                you be compared to the rest of the internet?
+                "boring" become novel again to our digital fly. <strong>Just how creative can
+                you be compared to the rest of the internet?</strong>
             </p>
         </div>
     )

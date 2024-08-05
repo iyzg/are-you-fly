@@ -1,3 +1,7 @@
+:root {
+  --secondary-background: #eeeef3;
+}
+
 #root, .app {
   width: 100%; 
   /* margin: 0 auto;
@@ -61,6 +65,7 @@ nav {
   border-radius: 6px;
   border: none;
   width: 100%;
+  background-color: var(--secondary-background);
 }
 
 .submitForm button {
@@ -74,27 +79,72 @@ a:visited {
   text-decoration: none;
 }
 
-/* Old Stuff
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Stats */
+.stats-box {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.general-stats {
+  flex: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.top-words {
+  flex: 6;
+}
+
+
+.stat-line {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: bold;
+  gap: 16px;
+  margin: 1em 0;
+}
+
+.stat-line > img {
+  width: 24px;
+  height: 24px;
+}
+
+.top-words p {
+  font-weight: bold;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+}
+
+.stats-header > h2 {
+  margin: 0px;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+.top-word {
+  background-color: #FAE6B5;
+  border-radius: 2px 10px 10px 2px;
+  padding-left: 10px;
+  /* background-color: powderblue; */
+}
+
+@media only screen and (max-width: 600px){
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
   }
 }
-*/
