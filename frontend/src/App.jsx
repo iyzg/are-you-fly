@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/header'
+import About from './components/about'
 
 function App() {
   const [text, setText] = useState('')
@@ -9,7 +11,7 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('submitted: ', text)
+    // console.log('submitted: ', text)
 
     try {
       const res = await fetch('http://howflyareyou.com/api/novelty', {
@@ -25,7 +27,7 @@ function App() {
       }
 
       const data = await res.json()
-      console.log('returned novelty: ', data.result)
+      // console.log('returned novelty: ', data.result)
       setResText('Novelty: ' + data.result)
     } catch (error) {
       console.error('Error:', error)
@@ -38,16 +40,18 @@ function App() {
 
   return (
     <>
-      <h1>How fly are you?</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          text: <input value={text} onChange={handleTextChange} />
-        </div>
-        <div>
-          <button type="submit">submit</button>
-        </div>
+      <Header />
+      <main>
+        <About />
+        <form onSubmit={handleSubmit} className='submitForm'>
+          <input placeholder='Send text off to the fly!' value={text} onChange={handleTextChange} />
+            <button type="submit">submit</button>
+        </form>
         <p>{resText}</p>
-      </form>
+        {/* <div className='stats'>
+          <h2>Stats (WIP)</h2> 
+        </div> */}
+      </main>
     </>
   )
 }
