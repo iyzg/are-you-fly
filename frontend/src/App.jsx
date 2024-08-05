@@ -14,7 +14,7 @@ function App() {
     // console.log('submitted: ', text)
 
     try {
-      const res = await fetch('http://howflyareyou.com/api/novelty', {
+      const res = await fetch('https://howflyareyou.com/api/novelty', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
