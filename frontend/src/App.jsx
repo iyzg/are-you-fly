@@ -64,9 +64,7 @@ function App() {
   // Return top n words, also trunacate to some length
   const getTopKTexts = (k, len) => {
     let sortedPairs = textScorePairs.toSorted((a, b) => b.score - a.score)  
-    console.log(sortedPairs)
     // Return object of text and score
-    console.log(sortedPairs.slice(0, k).map((x) => x.text.slice(0, len)))
     return sortedPairs.slice(0, k).map(x => ({text: x.text.slice(0, len), score: x.score}))
   }
 
