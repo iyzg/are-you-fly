@@ -10,6 +10,10 @@ Read the code at your own risk.
 
 If I wanted to take this more seriously, I would have the server write a backup every 10/100 queries, so that it's persistent and can be scaled more easily. 
 
+I'm also planning on adding dark mode in one of these days.
+
+Oooh, and it'd be cool if there was more juice on submitting words (maybe screen shake or something), and you should be able to hover points on the graph and have it show you the word you submitted.
+
 ### Development
 
 The frontend is React + D3, and the backend is Flask. I've setup a `wsgi.py` for Gunicorn to use on the server.
