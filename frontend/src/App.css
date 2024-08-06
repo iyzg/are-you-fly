@@ -95,6 +95,12 @@ nav {
   color: var(--primary-bg);
   font-weight: bold;
   cursor: pointer;
+  transition: all 200ms;
+}
+
+.submitForm button:hover {
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
 }
 
 a:visited {
@@ -197,6 +203,17 @@ button {
   /* background: linear-gradient(to right, #000, var(--secondary-background)); 
   -webkit-text-fill-color: transparent; 
   -webkit-background-clip: text;  */
+}
+
+.export-btn {
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.export-btn:hover {
+  filter: var(--primary-bg);
+  background-color: var(--secondary-background);
+
 }
 
 @media only screen and (max-width: 700px){

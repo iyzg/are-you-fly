@@ -70,6 +70,12 @@ function App() {
     return sortedPairs.slice(0, k).map(x => ({text: x.text.slice(0, len), score: x.score}))
   }
 
+  const copyExportData = () => {
+    let topWords = getTopKTexts(5, 10).map(x => x.text)
+    let exportedData = `How Fly Are You?\n${textScorePairs.length} texts submitted // ${calcAverageNovelty()} avg. novelty\nTop 5 texts:\n${topWords.join('\n')}`
+    navigator.clipboard.writeText(exportedData)
+  }
+
   return (
     <>
       <Header />
@@ -83,7 +89,7 @@ function App() {
         <div className='stats'>
           <div className='stats-header'>
             <h2>Stats</h2>
-            <img src={exportSVG} className='desktop mini-export'></img>
+            <img src={exportSVG} className='desktop mini-export export-btn' onClick={copyExportData}></img>
           </div>
           <div className='stats-box'>
             <div className='general-stats'>
@@ -94,7 +100,7 @@ function App() {
                 <img src={chartSVG}></img> {calcAverageNovelty()}
               </div>
               <div className='stat-line'>
-                <img src={exportSVG} className='mobile'></img>
+                <img src={exportSVG} className='mobile export-btn' onClick={copyExportData}></img>
               </div>
               {/* <button>export</button> */}
             </div>
