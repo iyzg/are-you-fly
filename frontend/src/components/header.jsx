@@ -6,6 +6,7 @@ const Header = (props) => {
             </span>
             <nav>
                 {/* <button className="about-button">about</button> */}
+                <a href="https://ivyzhang.me/">ivy</a>
                 <a href="https://github.com/iyzg/are-you-fly">github</a>
             </nav>
         </header>
