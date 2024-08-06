@@ -1,8 +1,9 @@
 # POST http://127.0.0.1:5000/api/novelty
 # POST http://137.184.108.44:5000/api/novelty
-POST http://howflyareyou.com/api/novelty
+# POST http://howflyareyou.com/api/novelty
+POST http://127.0.0.1:5000/api/novelty
 Content-Type: application/json
 
 {
-    "text": "hubble"
+    "text": "fire pokemon"
 }

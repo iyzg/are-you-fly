@@ -19,8 +19,8 @@ class SimilarityStoreApp():
         self.rng = np.random.default_rng()
 
         # Calculate how long to recover
-        self.storage_capacity = store_dim / top_k
-        self.eps = 1.0 / 1.05 * self.storage_capacity
+        self.storage_capacity = float(store_dim) / top_k
+        self.eps = 1.0 / (1.05 * self.storage_capacity)
 
         # Turn it into sparse, binary matrix with some number of 1s per column
         cols = np.repeat(np.arange(0, store_dim, dtype=np.int32), ones_per_col)
@@ -46,8 +46,8 @@ class SimilarityStoreApp():
         novelty = 0.0
         novelty = np.sum(self.stored_embeds[idxs]) / self.top_k
 
-        # set to 0.0
-        self.stored_embeds[idxs] = 0.0
+        # set to very small value, but don't 0 out completely
+        self.stored_embeds[idxs] *= 0.05
 
         # For anything not in idxs, add a bit
         increment = np.ones(self.store_dim) * self.eps
