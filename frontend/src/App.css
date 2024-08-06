@@ -217,4 +217,14 @@ button {
   .log-box {
     grid-template-columns: repeat(1, 100%);
   }
+
+  .stats-box {
+    flex-direction: column;
+  }
+
+  .general-stats {
+    display: flex;
+    flex-direction: start;
+    gap: 30px;
+  }
 }
