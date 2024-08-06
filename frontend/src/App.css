@@ -3,6 +3,8 @@
   --secondary-text: #9b9b9b;
   --primary-bg: #fdfeff;
   --primary-text: #111111;
+  --about-bg: #DAFAB4;
+  --about-header: #02B680;
 }
 
 #root, .app {
@@ -54,13 +56,13 @@ nav {
 
 .about {
   text-align: left;
-  background-color: #FAE6B5;
+  background-color: var(--about-bg);
   border-radius: 10px;
   padding: 16px;     
 }
 
 .about > h2 {
-  color: #B85B01;
+  color: var(--about-header);
   margin-top: 0px;
   font-size: 1em;
 }

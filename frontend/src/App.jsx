@@ -40,7 +40,7 @@ function App() {
       }
 
       const data = await res.json()
-      // console.log('returned novelty: ', data.result)
+      console.log('returned novelty: ', data.result)
       // setResText(text + ' novelty: ' + data.result)
       setTextScorePairs([...textScorePairs, { text, score: data.result }])
       // setTextScorePairs(textScorePairs.concat({ text, score: data.result }))

@@ -60,7 +60,7 @@ const LinePlot = ({
         >
             <path
                 fill="none"
-                stroke="#B85B01"
+                stroke="#02B680"
                 strokeWidth="0.4"
                 d={line(textScorePairs)}
             />
