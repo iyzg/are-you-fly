@@ -55,7 +55,6 @@ class SimilarityStoreApp():
         self.stored_embeds += increment
         self.stored_embeds = np.clip(self.stored_embeds, 0, 1)
 
-        novelty = round(novelty, 3)
         novelty = int(novelty * 100)
         return novelty
 

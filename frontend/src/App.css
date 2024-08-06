@@ -1,5 +1,8 @@
 :root {
   --secondary-background: #eeeef3;
+  --secondary-text: #9b9b9b;
+  --primary-bg: #fdfeff;
+  --primary-text: #111111;
 }
 
 #root, .app {
@@ -9,7 +12,7 @@
   text-align: center;
 }
 
-header, main, footer {
+header, main {
   max-width: 80ch;
   width: calc(100% - 32px);
   margin: 16px auto;
@@ -19,6 +22,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+header > span, header a {
+  font-weight: bold;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.subtitle {
+  color: var(--secondary-text);
+  display: inline;
 }
 
 nav {
@@ -66,12 +82,17 @@ nav {
   border: none;
   width: 100%;
   background-color: var(--secondary-background);
+  font-weight: bold;
 }
 
 .submitForm button {
   padding: 8px 16px;
   border-radius: 6px;
   border: none;
+  background-color: var(--primary-text);
+  color: var(--primary-bg);
+  font-weight: bold;
+  cursor: pointer;
 }
 
 a:visited {
@@ -90,7 +111,7 @@ a:visited {
   flex: 1;
 }
 
-.top-words {
+.line-plot {
   flex: 6;
 }
 
@@ -117,11 +138,16 @@ a:visited {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
-.stats-header > h2 {
-  margin: 0px;
+.stats-header, .log-header > h2 {
+  text-align: left;
+}
+
+.mini-export {
+  width: 20px;
+  height: 20px;
 }
 
 .mobile {
@@ -139,6 +165,44 @@ a:visited {
   /* background-color: powderblue; */
 }
 
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+}
+
+.log-box {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.log-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-background);
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 8px;
+}
+
+.log-item-text {
+  max-width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  /* background: linear-gradient(to right, #000, var(--secondary-background)); 
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;  */
+}
+
+@media only screen and (max-width: 700px){
+  .log-box {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media only screen and (max-width: 600px){
   .mobile {
     display: block;
@@ -146,5 +210,9 @@ a:visited {
 
   .desktop {
     display: none;
+  }
+
+  .log-box {
+    grid-template-columns: repeat(1, 100%);
   }
 }

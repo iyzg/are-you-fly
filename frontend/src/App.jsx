@@ -8,6 +8,8 @@ import './App.css'
 import Header from './components/header'
 import About from './components/about'
 import WordLine from './components/word-line'
+import Circles from './components/circles'
+import LinePlot from './components/line-plot'
 
 function App() {
   const storedTextScorePairs = JSON.parse(localStorage.getItem('textScorePairs')) || []
@@ -81,7 +83,7 @@ function App() {
         <div className='stats'>
           <div className='stats-header'>
             <h2>Stats</h2>
-            <button className='desktop'>export</button>
+            <img src={exportSVG} className='desktop mini-export'></img>
           </div>
           <div className='stats-box'>
             <div className='general-stats'>
@@ -96,31 +98,31 @@ function App() {
               </div>
               {/* <button>export</button> */}
             </div>
-            <div className='top-words'>
-              {/* Technically, you aren't supposed to use indexes, 
-                  but, there are no deletes allowed so this should be fine 
-                  ACTUALLY: This should use the original idx, from the original
-                  list or it will have changing idx
-                  */}
-              {getTopKTexts(10, 20).map((x, i) =>
-                <WordLine key={i} word={x.text} score={x.score} />
-                // <Fragment key={i}>
-                //   <p>{x} {}</p>
-                // </Fragment>
-              )}
-              {/* <h3>General Stats</h3> */}
-              {/* <p>words submitted: {textScorePairs.length}</p>
-            <p>average novelty: {calcAverageNovelty()}</p> */}
+            {/* Change this to line chart */}
+            <div className='line-plot'>
+              {/* <Circles /> */}
+              <LinePlot textScorePairs={textScorePairs}/>
             </div>
 
           </div>
         </div>
-        {/* 
-        stats
-        top words
-        words submimtted
-        average novelty
-        */}
+        <div className='log'>
+          <div className='log-header'>
+            <h2>Log</h2>
+          </div>
+          <div className='log-box'>
+            {textScorePairs.toReversed().slice(0, 50).map((x, i) => 
+              <div key={i} className='log-item'>
+                <span className='log-item-text'>
+                  {x.text}
+                </span>
+                <span>
+                  {x.score}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
       </main>
     </>
   )
