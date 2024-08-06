@@ -55,6 +55,7 @@ nav {
 }
 
 .about {
+  position: relative;
   text-align: left;
   background-color: var(--about-bg);
   border-radius: 10px;
@@ -69,6 +70,19 @@ nav {
 
 .about > p {
   max-width: 64ch;
+}
+
+.fly-logo {
+  position:absolute;
+  top: -20px;
+  right: -30px;
+  width: 70px;
+  height: 70px;
+  transition: all 200ms;
+}
+
+.fly-logo:hover {
+  transform: rotate(30deg);
 }
 
 .submitForm {

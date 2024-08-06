@@ -1,3 +1,5 @@
+import flySVG from '../assets/fly.svg'
+
 const About = (props) => {
     return (
         <div className="about">
@@ -11,6 +13,7 @@ const About = (props) => {
                 "boring" become novel again to our digital fly. <strong>Just how creative can
                 you be compared to the rest of the internet?</strong>
             </p>
+            <img src={flySVG} className='fly-logo'/>
         </div>
     )
 }
